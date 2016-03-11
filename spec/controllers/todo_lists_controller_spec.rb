@@ -23,7 +23,7 @@ describe TodoListsController do
   # This should return the minimal set of attributes required to create a valid
   # TodoList. As you add validations to TodoList, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "title" => "MyString" } }
+  let(:valid_attributes) { { "title" => "MyString", "description" => "my cool description" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -106,8 +106,8 @@ describe TodoListsController do
         # specifies that the TodoList created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        TodoList.any_instance.should_receive(:update).with({ "title" => "MyString" })
-        put :update, {:id => todo_list.to_param, :todo_list => { "title" => "MyString" }}, valid_session
+        TodoList.any_instance.should_receive(:update).with({ "title" => "MyCoolString" })
+        put :update, {:id => todo_list.to_param, :todo_list => { "title" => "MyCoolString" }}, valid_session
       end
 
       it "assigns the requested todo_list as @todo_list" do
