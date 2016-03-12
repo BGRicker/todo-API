@@ -8,7 +8,7 @@ describe "successfully creates todo items" do
     fill_in "Content", with: "Pizza"
     click_button "Save"
     expect(page).to have_content("Added todo list item.")
-    within("ul.todo_items") do
+    within("table.todo_items") do
       expect(page).to have_content("Pizza")
     end
   end
