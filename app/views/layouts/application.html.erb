@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Completer</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Completer</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <% flash.each do |type, message| %>
-    <div class="alert flash" <%= type %>">
-      <%= message %>
+    <div class="nav">
+      <h1><%= link_to "Completer", root_path %></h1>
+      <ul>
+        <li><%= link_to "Todo Lists", todo_lists_path %></li>
+      </ul>
+      <br class="clear" />
     </div>
-  <% end %>
 
-<%= yield %>
+    <% flash.each do |type, message| %>
+      <div class="alert flash" <%= type %>">
+        <%= message %>
+      </div>
+    <% end %>
 
-</body>
+    <%= yield %>
+
+  </body>
 </html>
