@@ -33,7 +33,10 @@ describe "successfully creates todo items" do
   end
 
   it "won't create a todo without content" do
-    create_todo_list title: ""
+    visit_todo_list(todo_list)
+    click_link "New Todo Item"
+    fill_in "Content", with: ""
+    click_button "Save"
     expect(page).to have_content("There was a problem adding that todo list item.")
   end
 
