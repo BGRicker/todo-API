@@ -16,17 +16,17 @@ describe User do
     end
 
     it "requires the user to have an email" do
-      # expect(user).to validate_presence_of(:email) #shoulda_matchers error
+      expect(user).to validate_presence_of(:email) #shoulda_matchers error
     end
 
     it "requires a unique email" do
-      # expect(user).to validate_uniqueness_of(:email)
+      expect(user).to validate_uniqueness_of(:email)
     end
 
 
     it "requires a unique email case insensitive" do
-      # user.email = "FUTURE@YOUNGMETRODONTTRUSTYOU.COM"
-      # expect(user).to validate_uniqueness_of(:email)
+      user.email = "FUTURE@YOUNGMETRODONTTRUSTYOU.COM"
+      expect(user).to validate_uniqueness_of(:email)
     end
 
     describe "#downcase_email" do

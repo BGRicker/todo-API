@@ -23,6 +23,6 @@ end
 
 group :test do
   gem 'capybara', '~> 2.1.0'
-  gem 'rspec-rainbow'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
