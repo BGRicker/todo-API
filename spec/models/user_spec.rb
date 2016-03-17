@@ -5,7 +5,9 @@ describe User do
     {
       first_name: "Kanye",
       last_name: "West",
-      email: "Kanye2020@whitehouse.gov"
+      email: "Kanye2020@whitehouse.gov",
+      password: "yourc00lpassword",
+      password_confirmation: "yourc00lpassword"
     }
   }
   context "validations" do
@@ -35,13 +37,6 @@ describe User do
         expect{ user.downcase_email }.to change{ user.email }.
           from("FUTURE@YOUNGMETRODONTTRUSTYOU.COM").
           to("future@youngmetrodonttrustyou.com")
-      end
-
-      it "downcases an email before saving" do
-        user = User.new(valid_attributes)
-        user.email = "FUTURE@YOUNGMETRODONTTRUSTYOU.COM"
-        expect(user.save).to be_truthy
-        expect(user.email).to eq("future@youngmetrodonttrustyou.com")
       end
     end
   end
