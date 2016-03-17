@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
 
   before_save :downcase_email
 
-  attr_accessor :password, :password_confirmation
-
   def downcase_email
     self.email = email.downcase
   end
